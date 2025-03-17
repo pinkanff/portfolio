@@ -1,0 +1,553 @@
+/* ====== Import Font (Ganti SF Pro dengan Apple System Font) ====== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", sans-serif;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #aaa;
+}
+
+/* ====== HEADER ====== */
+header {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: black;
+    color: white;
+    padding-top: 80px; /* Mencegah overlap dengan navbar */
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* ====== PORTFOLIO ====== */
+.portfolio {
+    background: #f5f5f7;
+    color: black;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.image-box {
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-box img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ====== FOOTER ====== */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-box {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Batas ukuran ikon WhatsApp */
+.whatsapp-icon {
+    width: 80px; /* Ubah sesuai kebutuhan */
+    height: auto;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Style untuk ikon WhatsApp */
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+/* Efek hover */
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Style untuk pop-up chat */
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    z-index: 1001;
+}
+
+/* Header pop-up */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Tombol close */
+.close-btn {
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+/* Input dan textarea */
+.chat-body input, .chat-body select, .chat-body textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Tombol kirim */
+.chat-body button {
+    margin-top: 10px;
+    width: 100%;
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chat-body button:hover {
+    background: #1eb04d;
+}
+
+/* Style overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Gambar dalam overlay */
+.overlay-content {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* Tombol close */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Navigasi gambar */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* Tombol navigasi */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Tombol close */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#whatsapp-popup {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    display: none;
+    flex-direction: column;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+input, select, textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    overflow: hidden;
+    min-height: 30px;
+    max-height: 100px;
+}
+
+/* Hamburger Button */
+#menu-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Menu Navigasi */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding-top: 50px;
+    transition: 0.3s;
+}
+
+#nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#nav-menu ul li {
+    padding: 10px;
+}
+
+#nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Saat Menu Aktif */
+#nav-menu.active {
+    left: 0;
+}
+
+/* Sembunyikan menu di tampilan mobile */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Awalnya tersembunyi */
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    padding-top: 50px;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+/* Jika menu aktif, geser ke kanan agar terlihat */
+#nav-menu.active {
+    left: 0;
+}
+
+/* Styling hamburger menu */
+#menu-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* SEMBUNYIKAN MENU HAMBURGER DI DESKTOP */
+#menu-toggle {
+    display: none;
+}
+
+/* SEMBUNYIKAN NAVIGASI UTAMA DI MOBILE */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Sembunyikan menu utama */
+    }
+
+    #menu-toggle {
+        display: block; /* Tampilkan menu hamburger */
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        background: #000;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    /* Ketika menu aktif, tampilkan */
+    #nav-menu.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        padding-top: 50px;
+        transition: 0.3s;
+        z-index: 999;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Sembunyikan navbar utama */
+    }
+
+    #menu-toggle {
+        display: block; /* Pastikan hamburger menu terlihat */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar { 
+        display: none; /* Sembunyikan navbar utama di mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto; /* Hindari tinggi 100vh agar tidak terlalu besar */
+        padding: 50px 20px; /* Tambahkan padding agar konten lebih rapi */
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #nav-menu {
+        width: 100%; /* Penuhi seluruh layar */
+    }
+}
+
+.image-box img {
+    width: 100%;  /* Menyesuaikan ukuran container */
+    max-width: 250px; /* Batasi ukuran maksimum */
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.hero {
+    height: 100vh; /* Menyesuaikan tinggi layar perangkat */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: black; /* Sesuaikan dengan warna header */
+    color: white; /* Warna teks */
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 24px; /* Sesuaikan ukuran font */
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+/* Pastikan header memenuhi layar */
+header {
+    height: 100vh; /* 100% tinggi layar */
+    display: flex;
+    justify-content: center; /* Posisi tengah */
+    align-items: center;
+    text-align: center;
+    background-color: black; /* Sesuaikan warna */
+    color: white; /* Warna teks */
+}
+
+/* Atur container agar tidak terlalu lebar */
+.container {
+    max-width: 90%;
+}

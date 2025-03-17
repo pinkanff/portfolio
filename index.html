@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - I Wayan Satya Narayana</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<script src="script.js"></script>
+</body>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+
+<!-- Hamburger Menu Button -->
+<div id="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<!-- Navigasi -->
+<nav id="nav-menu">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Tentang</a></li>
+        <li><a href="#">Kontak</a></li>
+    </ul>
+</nav>
+
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <h1>I Wayan Satya Narayana</h1>
+            <p>Desainer Grafis | Digital & Cetak</p>
+        </div>
+    </header>
+
+    <!-- SEKSYEN PORTFOLIO -->
+    <section class="portfolio">
+        <h2>Portfolio Desain</h2>
+        <div class="gallery">
+
+            <!-- LOGO -->
+            <div class="image-box" onclick="openLightbox('logo', 0)">
+                <img src="images/logo1.png" class="portfolio-img" alt="Logo 1" data-category="logo">
+                <p>Logo</p>
+            </div>
+
+            <!-- POSTER -->
+            <div class="image-box" onclick="openLightbox('poster', 0)">
+                <img src="images/poster1.png" class="portfolio-img" alt="Poster 1" data-category="poster">
+                <p>Poster</p>
+            </div>
+
+            <!-- BAJU -->
+            <div class="image-box" onclick="openLightbox('baju', 0)">
+                <img src="images/baju1.png" class="portfolio-img" alt="Baju 1" data-category="baju">
+                <p>Baju</p>
+            </div>
+
+            <!-- SPANDUK -->
+            <div class="image-box" onclick="openLightbox('spanduk', 0)">
+                <img src="images/spanduk1.png" class="portfolio-img" alt="Spanduk 1" data-category="spanduk">
+                <p>Spanduk</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Preview">
+        <div class="prev" onclick="changeImage(-1)">&larr;</div>
+        <div class="next" onclick="changeImage(1)">&rarr;</div>
+    </div>
+
+    <!-- Ikon WhatsApp -->
+    <img src="images/whatsapp.png" alt="Chat via WhatsApp" class="whatsapp-icon" onclick="openChat()">
+
+    <!-- Pop-up Chat Box -->
+    <div id="whatsapp-popup">
+        <button id="close-btn" onclick="closeChat()">✖</button>
+        <h3>Chat dengan Kami</h3>
+    
+        <label for="nama">Nama Pemesan:</label>
+        <input type="text" id="nama" placeholder="Nama Anda">
+    
+        <label for="jenis-order">Jenis Order:</label>
+        <select id="jenis-order">
+            <option value="Baju">Baju</option>
+            <option value="Spanduk">Spanduk</option>
+        </select>
+    
+        <label for="tenggat">Tenggat Waktu:</label>
+        <input type="date" id="tenggat">
+    
+        <label for="pesan">Catatan Tambahan:</label>
+        <textarea id="pesan" rows="1" oninput="resizeTextarea(this)"></textarea>
+    
+        <button onclick="kirimPesan()">Kirim ke WhatsApp</button>
+    </div>
+    
+    
+    <style>
+        #whatsapp-popup {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+    
+        #close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 50%;
+        }
+    </style>
+    
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 I Wayan Satya Narayana</p>
+    </footer>
+
+</body>
+</html>
